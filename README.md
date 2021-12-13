@@ -11,18 +11,18 @@ This is a command line application based on Symfony. It processes a local or rem
 
 ## Setup
 
-Create Google service account and download JSON file which consists of all the credentials.
+* Create Google service account and download JSON file which consists of all the credentials.
 
-Enable Google Sheets API and Google Drive API.
+* Enable Google Sheets API and Google Drive API.
 
-Next step is to setup environment. file.env contains all the variables required for application.
+* Next step is to setup environment. file.env contains all the variables required for application.
 
-For Google service account set following env variable. Write path to the credentials JSON file.
+* For Google service account set following env variable. Write path to the credentials JSON file.
 
 ```
 GS_AUTH_FILE= Cred.json
 ```
-For accessing files from remote server set following env credentials
+* For accessing files from remote server set following env credentials
 ```
 FTP_HOSTNAME=
 FTP_USER=
@@ -30,19 +30,19 @@ FTP_PASSWORD=
 ```
 ## Export Command
 
-For local export run this command inside the php container
+* For local export run this command inside the php container
 ```
 bin/console app:upload-command --source local abc.xml
 ```
 
-For remote export run this command inside the php container
+* For remote export run this command inside the php container
 ```
 bin/console app:upload-command --source remote employee.xml
 ```
 
 ## Run tests
 
-Run following inside the container
+* Run following inside the container
 ```
 ./vendor/bin/phpunit tests/
 ```
