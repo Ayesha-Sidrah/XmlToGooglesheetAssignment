@@ -47,6 +47,6 @@ Run following inside the container
 ./vendor/bin/phpunit tests/
 ```
 
-##Logs
+## Logs
 
 Logs for the application are stored in the 'environment'.log file. In dev environment dev.log file.
