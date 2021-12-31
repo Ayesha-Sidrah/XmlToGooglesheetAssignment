@@ -11,7 +11,8 @@ class ApiController extends AbstractController
     /**
      * @Route("/lucky/number")
      */
-    public function myfunction(){
+    public function myfunction()
+    {
         return $this->json([
             "message" => "Success",
             "status" => Response::HTTP_OK
