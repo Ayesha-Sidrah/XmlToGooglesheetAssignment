@@ -1,17 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Tests\Unit;
 
 use App\Interfaces\ExporterInterface;
 use App\Service\FileReader\FileReader;
-use App\Service\XmlExporterservice;
+use App\Service\XmlExporterService;
 use App\Transformer\XmlTransformer;
 use PHPUnit\Framework\TestCase;
 
-class XmlExporterserviceTest extends TestCase
+class XmlExporterServiceTest extends TestCase
 {
     /** @test */
-    public function provides_input_to_services(){
+    public function providesInputToServices()
+    {
         $xmlTransformerMock = $this->createMock(XmlTransformer::class);
         $fileReaderMock = $this->createMock(FileReader::class);
         $dataExporterMock = $this->createMock(ExporterInterface::class);
@@ -19,8 +22,8 @@ class XmlExporterserviceTest extends TestCase
         $xmlExporterService = new XmlExporterService(
             $xmlTransformerMock,
             $fileReaderMock,
-            $dataExporterMock,
-            );
+            $dataExporterMock
+        );
 
         $exportData = $xmlExporterService->export('local', 'file');
         $this->assertTrue($exportData);

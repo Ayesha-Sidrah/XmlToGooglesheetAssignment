@@ -9,8 +9,9 @@ use App\Interfaces\XmlExporterInterface;
 use App\Service\FileReader\FileReader;
 use App\Transformer\XmlTransformer;
 
-class XmlExporterservice implements XmlExporterInterface
+class XmlExporterService implements XmlExporterInterface
 {
+    const BATCH = 100;
     private XmlTransformer $xmlTransformer;
     private FileReader $fileReader;
     private ExporterInterface $dataExporter;
@@ -35,8 +36,8 @@ class XmlExporterservice implements XmlExporterInterface
 
         foreach ($transformedData as $data) {
             $exportBatchData[] = $data;
-            if (count($exportBatchData) === 100) {
-                $this->dataExporter->updateValues( $spreadsheetId, $exportBatchData);
+            if (count($exportBatchData) === self::BATCH) {
+                $this->dataExporter->updateValues($spreadsheetId, $exportBatchData);
                 $exportBatchData = [];
             }
         }

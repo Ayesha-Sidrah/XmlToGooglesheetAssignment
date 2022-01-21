@@ -9,7 +9,7 @@ use Generator;
 
 class XmlTransformer implements TransformerInterface
 {
-    public function transform($content): Generator
+    public function transform(Generator $content): Generator
     {
         foreach ($content as $key => $data) {
             if ($key === 0) {

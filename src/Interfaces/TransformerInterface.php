@@ -8,5 +8,5 @@ use Generator;
 
 interface TransformerInterface
 {
-    public function transform($content): Generator;
+    public function transform(Generator $content): Generator;
 }

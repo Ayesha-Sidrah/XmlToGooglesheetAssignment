@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-use App\Service\XmlExporterservice;
+use App\Service\XmlExporterService;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Console\Command\Command;
@@ -19,16 +19,16 @@ class UploadCommand extends Command
 
     private LoggerInterface $logger;
 
-    private XmlExporterservice $xmlExporterservice;
+    private XmlExporterService $xmlExporterService;
 
 
     public function __construct(
         LoggerInterface $logger,
-        XmlExporterservice $xmlExporterservice
+        XmlExporterService $xmlExporterService
     ) {
         parent::__construct();
         $this->logger = $logger;
-        $this->xmlExporterservice = $xmlExporterservice;
+        $this->xmlExporterService = $xmlExporterService;
     }
 
     protected function configure()
@@ -49,8 +49,7 @@ class UploadCommand extends Command
         try {
             $filename = $input->getArgument("filename");
             $source = $input->getOption("source");
-
-            $this->xmlExporterservice->export($source, $filename);
+            $this->xmlExporterService->export($source, $filename);
         } catch (Exception $exception) {
             $this->logger->error('error getting XML content', [$exception->getMessage()]);
             return Command::FAILURE;

@@ -98,7 +98,7 @@ class DataProvider
                         2 => '396',
                         3 => 'Tazo Om Tea 24ct Box',
                         4 => '',
-                        5 => 'Tazo Om Tea 24ct box allow you to steep 24 individual cups of flavorful, complicated blended tea when you prepare Tazo Tea.',
+                        5 => 'Tazo Om Tea 24ct box allow you to steep 24 individual cups of flavorful, complicated ',
                         6 => '6.5000',
                         7 => 'http://www.coffeeforless.com/tazo-om-tea-24ct-box.html',
                         8 => 'http://mcdn.coffeeforless.com/media/catalog/product/images/coffeepods/tazo-om-tea-24ct-box.jpg',
@@ -113,6 +113,33 @@ class DataProvider
                         17 => '0',
                     ),
 
+        );
+    }
+
+    public function dataToTransformer()
+    {
+        yield array(
+            0 => array(
+                'id' => '1',
+                'name' => 'Ayesha',
+                'email' => 'ayesha@productsup.com',
+                'role' => 'Developer',
+                'team' => 'Tech',
+            ),
+            1 => array(
+                'id' => '2',
+                'name' => 'Nayan',
+                'email' => 'nayan@productsup.com',
+                'role' => 'Developer',
+                'team' => 'Tech',
+            ),
+            2 => array(
+                'id' => '3',
+                'name' => 'Partha',
+                'email' => 'partha@productsup.com',
+                'role' => 'Developer',
+                'team' => 'Tech',
+            ),
         );
     }
 
