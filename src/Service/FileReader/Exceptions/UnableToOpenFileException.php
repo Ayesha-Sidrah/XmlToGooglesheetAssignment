@@ -6,6 +6,6 @@ namespace App\Service\FileReader\Exceptions;
 
 use RuntimeException;
 
-class InvalidFileReaderException extends RuntimeException
+class UnableToOpenFileException extends RuntimeException
 {
 }

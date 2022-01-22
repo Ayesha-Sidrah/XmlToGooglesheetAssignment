@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Service;
 
+use App\Service\Exceptions\FileNotFoundException;
+
 class FilePathProvider
 {
     public const LOCAL = 'local';
@@ -24,6 +26,10 @@ class FilePathProvider
             $filePath = $this->projectDir . $filename;
         } elseif ($source == self::REMOTE) {
             $filePath = $this->ftpPrefix . $filename;
+        }
+
+        if (false == file_exists($filePath)) {
+            throw new FileNotFoundException("File does not exist in path: " . $filePath);
         }
         return $filePath;
     }

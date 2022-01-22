@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Service\GoogleClient;
 
 use App\Interfaces\ExporterInterface;
+use App\Service\GoogleClient\Exceptions\PermissionsErrorException;
 use Google\Exception;
 use Google_Client;
 use Google_Service_Drive;
@@ -94,6 +95,10 @@ class GoogleClient implements ExporterInterface
         $permission->setRole("reader");
         $client = $this->getClient();
         $service = $this->getGoogleDriveService($client);
-        $service->permissions->create($spreadsheetId, $permission);
+        try {
+            $service->permissions->create($spreadsheetId, $permission);
+        } catch (Exception $e) {
+            throw new PermissionsErrorException("Error setting permissions" . $e->getMessage());
+        }
     }
 }

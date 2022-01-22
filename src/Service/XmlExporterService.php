@@ -11,7 +11,7 @@ use App\Transformer\XmlTransformer;
 
 class XmlExporterService implements XmlExporterInterface
 {
-    const BATCH = 100;
+    const BATCHITEMS = 100;
     private XmlTransformer $xmlTransformer;
     private FileReader $fileReader;
     private ExporterInterface $dataExporter;
@@ -36,7 +36,7 @@ class XmlExporterService implements XmlExporterInterface
 
         foreach ($transformedData as $data) {
             $exportBatchData[] = $data;
-            if (count($exportBatchData) === self::BATCH) {
+            if (count($exportBatchData) === self::BATCHITEMS) {
                 $this->dataExporter->updateValues($spreadsheetId, $exportBatchData);
                 $exportBatchData = [];
             }
