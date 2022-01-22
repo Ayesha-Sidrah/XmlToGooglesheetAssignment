@@ -20,3 +20,5 @@
 ###< squizlabs/php_codesniffer ###
 
 .idea
+/coffee_feed.xml
+/cred.json
