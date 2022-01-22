@@ -6,6 +6,7 @@ namespace App\Service\FileReader;
 
 use App\Interfaces\ReaderInterface;
 use App\Service\FilePathProvider;
+use App\Service\FileReader\Exceptions\FileOpenFailedException;
 use App\Service\FileReader\Exceptions\FileReaderException;
 use Throwable;
 use XMLReader;
@@ -43,7 +44,7 @@ class FileReader implements ReaderInterface
                 }
             }
         } catch (Throwable $exception) {
-            throw new FileReaderException("Error reading XML file", [$exception]);
+            throw new FileReaderException("Error reading XML file");
         }
     }
 }
