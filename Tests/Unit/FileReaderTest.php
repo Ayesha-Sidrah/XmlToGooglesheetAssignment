@@ -21,7 +21,7 @@ class FileReaderTest extends TestCase
         $this->expectException(FileReaderException::class);
         $this->xmlReader = new FileReader($this->filePathProvider);
 
-        $fileName = 'abc.txt';
-        $this->xmlReader->readXml('local', $fileName);
+        $fileName = 'abc.xml';
+        $this->xmlReader->readXml('remote', $fileName);
     }
 }

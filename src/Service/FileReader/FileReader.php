@@ -6,7 +6,6 @@ namespace App\Service\FileReader;
 
 use App\Interfaces\ReaderInterface;
 use App\Service\FilePathProvider;
-use App\Service\FileReader\Exceptions\FileOpenFailedException;
 use App\Service\FileReader\Exceptions\FileReaderException;
 use Throwable;
 use XMLReader;
