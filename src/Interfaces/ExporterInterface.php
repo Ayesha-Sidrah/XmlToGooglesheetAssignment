@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Interfaces;
+declare(strict_types=1);
 
-use App\MappedXml\MappedXml;
+namespace App\Interfaces;
 
 interface ExporterInterface
 {
-    public function exportSheet(MappedXml $mappedXml): string;
+    public function updateValues(string $spreadsheetId, array $values): void;
+
+    public function create(): string;
 }

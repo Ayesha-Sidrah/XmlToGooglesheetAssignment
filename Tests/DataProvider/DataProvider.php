@@ -2,14 +2,11 @@
 
 namespace App\Tests\DataProvider;
 
-use App\MappedXml\MappedXml;
-
 class DataProvider
 {
-    public function dataExport(): MappedXml
+    public function dataExport()
     {
-        return new MappedXml(
-            array(
+        return array(
                 0 =>
                     array(
                         0 => 'Entity_id',
@@ -115,7 +112,7 @@ class DataProvider
                         16 => '1',
                         17 => '0',
                     ),
-            )
+
         );
     }
 
