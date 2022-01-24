@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 class XmlExporterServiceTest extends TestCase
 {
     /** @test */
-    public function providesInputToServices()
+    public function toTestExport()
     {
         $xmlTransformerMock = $this->createMock(XmlTransformer::class);
         $fileReaderMock = $this->createMock(FileReader::class);
